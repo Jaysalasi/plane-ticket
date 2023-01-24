@@ -1,7 +1,9 @@
+import 'package:booktickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class ThickContainer extends StatelessWidget {
-  const ThickContainer({super.key});
+  final bool? isColor;
+  const ThickContainer({super.key, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class ThickContainer extends StatelessWidget {
         ),
         border: Border.all(
           width: 2,
-          color: Colors.white,
+          color: isColor == null ? Colors.white : Styles.blueColor,
         ),
       ),
     );

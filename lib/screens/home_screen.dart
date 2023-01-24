@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const Gap(
-            1,
+            20,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(
