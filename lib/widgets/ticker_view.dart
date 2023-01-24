@@ -12,11 +12,11 @@ class TicketView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
         margin: const EdgeInsets.only(
-          left: 15,
+          right: 15,
         ),
         child: Column(
           children: [
@@ -171,6 +171,159 @@ class TicketView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Expanded(
+                    child: LayoutBuilder(
+                        builder: (context, BoxConstraints constraints) {
+                      return Flex(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        direction: Axis.horizontal,
+                        children: List.generate(
+                          (constraints.constrainWidth() / 15).floor(),
+                          (index) => SizedBox(
+                            width: 5,
+                            height: 1,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Styles.whiteColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Styles.whiteColor,
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(
+                            10,
+                          ),
+                          bottomLeft: Radius.circular(
+                            10,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            /*
+
+          down orange 
+
+          */
+
+            Container(
+              decoration: BoxDecoration(
+                color: Styles.orangeColor,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(
+                    21,
+                  ),
+                  bottomRight: Radius.circular(
+                    21,
+                  ),
+                ),
+              ),
+              padding: const EdgeInsets.all(
+                15,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            '1 MAY',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Date',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            '08:00AM',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Departure time',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            '23',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'number',
+                            style: Styles.headLineStyle3.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      // const Spacer(),
+                    ],
+                  ),
+                  const Gap(
+                    2,
+                  ),
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     SizedBox(
+                  //       width: 100,
+                  //       child: Text(
+                  //         'Number',
+                  //         style: Styles.headLineStyle4.copyWith(
+                  //           color: Colors.white,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     Text(
+                  //       '8H 30M',
+                  //       style: Styles.headLineStyle4.copyWith(
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //     SizedBox(
+                  //       width: 100,
+                  //       child: Text(
+                  //         'London',
+                  //         textAlign: TextAlign.end,
+                  //         style: Styles.headLineStyle4.copyWith(
+                  //           color: Colors.white,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // )
                 ],
               ),
             )

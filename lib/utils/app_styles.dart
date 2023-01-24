@@ -11,6 +11,7 @@ class Styles {
   static Color blueColor = const Color(0xff526799);
   static Color orangeColor = const Color(0xfff37b67);
   static Color whiteColor = const Color(0xffffffff);
+  static Color kakiColor = const Color(0xffd2bdb6);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, color: textColor, fontWeight: FontWeight.w500);

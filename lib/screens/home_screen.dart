@@ -1,3 +1,5 @@
+import 'package:booktickets/screens/hotel_cards.dart';
+import 'package:booktickets/utils/hotel_list.dart';
 import 'package:booktickets/widgets/ticker_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -110,10 +112,65 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Gap(
+          const Gap(
             20,
           ),
-          TicketView()
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Row(
+                children: const [
+                  TicketView(),
+                  TicketView(),
+                ],
+              ),
+            ),
+          ),
+          const Gap(
+            1,
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Hotels',
+                  style: Styles.headLineStyle2,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'view all',
+                    style: Styles.headLineStyle3.copyWith(
+                      color: Styles.primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Row(
+                // children: const [
+                //   HotelCards(),
+                //   HotelCards(),
+                // ],
+                children: hotelList
+                    .map((singleHotel) => HotelCards(hotel: singleHotel))
+                    .toList(),
+              ),
+            ),
+          ),
+          const Gap(
+            20,
+          ),
         ],
       ),
     );
