@@ -9,6 +9,7 @@ class HotelCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(hotel['price']);
     final size = AppLayout.getSize(context);
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -43,9 +44,9 @@ class HotelCards extends StatelessWidget {
                 20,
               ),
               color: Styles.primaryColor,
-              image: const DecorationImage(
+              image: DecorationImage(
                 image: AssetImage(
-                  "assets/images/one.png",
+                  'assets/images/${hotel['image']}',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -55,13 +56,13 @@ class HotelCards extends StatelessWidget {
             10,
           ),
           Text(
-            "Open Space",
+            "${hotel['place']}",
             style: Styles.headLineStyle2.copyWith(
               color: Styles.kakiColor,
             ),
           ),
           Text(
-            "London",
+            "${hotel['destination']}",
             style: Styles.headLineStyle4.copyWith(
               color: Styles.whiteColor,
             ),
@@ -70,7 +71,8 @@ class HotelCards extends StatelessWidget {
             30,
           ),
           Text(
-            "\$ 40 / night",
+            // ignore: prefer_interpolation_to_compose_strings
+            "\$" + hotel['price'].toString() + " / night",
             style: Styles.headLineStyle3.copyWith(
               color: Styles.kakiColor,
             ),

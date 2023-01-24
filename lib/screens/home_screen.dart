@@ -1,5 +1,7 @@
 import 'package:booktickets/screens/hotel_cards.dart';
+import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/hotel_list.dart';
+import 'package:booktickets/widgets/double_text_widget.dart';
 import 'package:booktickets/widgets/ticker_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     Container(
-                      height: 50,
-                      width: 50,
+                      height: AppLayout.getHeight(50),
+                      width: AppLayout.getWidth(50),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: const DecorationImage(
@@ -65,13 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   25,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 10,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppLayout.getWidth(15),
+                    vertical: AppLayout.getHeight(10),
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      10,
+                      AppLayout.getHeight(10),
                     ),
                     color: Colors.white,
                   ),
@@ -91,24 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Gap(
                   30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Upcoming Flights',
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'view all',
-                        style: Styles.headLineStyle3.copyWith(
-                          color: Styles.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
+                const AppDoubleRowText(
+                  bigText: 'Upcoming Flights',
+                  smallText: 'view all',
+                ),
               ],
             ),
           ),
@@ -120,37 +108,22 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Row(
-                children: const [
-                  TicketView(),
-                  TicketView(),
-                ],
+                children: ticketList
+                    .map((singleTicket) => TicketView(ticket: singleTicket))
+                    .toList(),
               ),
             ),
           ),
           const Gap(
             1,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(
+          const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 20,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Hotels',
-                  style: Styles.headLineStyle2,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'view all',
-                    style: Styles.headLineStyle3.copyWith(
-                      color: Styles.primaryColor,
-                    ),
-                  ),
-                ),
-              ],
+            child: AppDoubleRowText(
+              bigText: 'Hotels',
+              smallText: 'view all',
             ),
           ),
           SingleChildScrollView(
