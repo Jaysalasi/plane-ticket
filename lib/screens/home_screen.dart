@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           5,
                         ),
                         Text(
-                          'Book Tickets',
+                          'User Prime',
                           style: Styles.headLineStyle1,
                         ),
                       ],

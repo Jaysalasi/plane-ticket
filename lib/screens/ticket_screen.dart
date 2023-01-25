@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, unused_local_variable
+
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/utils/hotel_list.dart';
 import 'package:booktickets/widgets/layout_builder_widget.dart';
@@ -217,7 +219,7 @@ class TicketScreen extends StatelessWidget {
               300,
             ),
             child: Container(
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.all(3),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -239,7 +241,7 @@ class TicketScreen extends StatelessWidget {
               300,
             ),
             child: Container(
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.all(3),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(

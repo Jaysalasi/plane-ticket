@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/profile_screen.dart';
 import 'package:booktickets/screens/ticket_screen.dart';
 import 'package:booktickets/screens/home_screen.dart';
 import 'package:booktickets/screens/search_screen.dart';
@@ -16,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text('profile'),
+    const ProfileScreen(),
   ];
 
   int _selectedIndex = 0;

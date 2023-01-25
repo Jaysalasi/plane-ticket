@@ -9,7 +9,6 @@ class HotelCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(hotel['price']);
     final size = AppLayout.getSize(context);
     return Container(
       padding: const EdgeInsets.symmetric(
